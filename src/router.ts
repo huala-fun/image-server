@@ -4,7 +4,7 @@ import { IRequest, Router, json, withContent } from 'itty-router';
 const router = Router();
 
 const withFormData = async (req: IRequest) => {};
-// GET collection index
+// GET collection i   ndex
 router.get('/api/todos', () => new Response('Todos Index!'));
 
 // GET item
