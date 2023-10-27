@@ -13,13 +13,22 @@ router.get('/api/todos/:id', ({ params }) => new Response(`Todo #${params.id}`))
 // POST to the collection (we'll use async here)
 router.post('/api/todos', async (req) => {
 	const formData = await req.formData();
-	const file = formData.get('file') as unknown as File;
 	const title = formData.get('title') as string;
+
+	const file = formData.get('file') as unknown as File;
+
+	const dd = await file.arrayBuffer();
+
 	
+	console.log(dd);
+	const base64 = Buffer.from(dd).toString('base64');
+
 	
+
 	return {
 		file: file.name,
-		title
+		title,
+		// base64
 	};
 });
 

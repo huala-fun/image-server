@@ -25,6 +25,9 @@ devDependencies:
   '@cloudflare/workers-types':
     specifier: ^4.20230419.0
     version: registry.npmmirror.com/@cloudflare/workers-types@4.20231025.0
+  '@types/node':
+    specifier: ^20.8.9
+    version: registry.npmmirror.com/@types/node@20.8.9
   itty-router:
     specifier: ^4.0.23
     version: registry.npmmirror.com/itty-router@4.0.23
