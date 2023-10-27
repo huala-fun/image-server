@@ -1,5 +1,5 @@
 {
-  "name": "github-images-api",
+  "name": "image-server",
   "version": "0.0.0",
   "private": true,
   "scripts": {
