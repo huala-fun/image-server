@@ -9,8 +9,15 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20230419.0",
-    "itty-router": "^3.0.12",
+    "itty-router": "^4.0.23",
     "typescript": "^5.0.4",
     "wrangler": "^3.0.0"
+  },
+  "dependencies": {
+    "@octokit/core": "^5.0.1",
+    "@types/formidable": "^3.4.4",
+    "dayjs": "^1.11.10",
+    "formidable": "^3.5.1",
+    "uuid": "^9.0.1"
   }
 }

@@ -12,6 +12,8 @@ import handleProxy from './proxy';
 import handleRedirect from './redirect';
 import apiRouter from './router';
 
+import { IRequest, Router, json, withContent } from 'itty-router';
+
 // Export a default object containing event handlers
 export default {
 	// The fetch handler is invoked when this worker receives a HTTP(S) request
@@ -31,7 +33,7 @@ export default {
 
 		if (url.pathname.startsWith('/api/')) {
 			// You can also use more robust routing
-			return apiRouter.handle(request);
+			return apiRouter.handle(request).then(json);
 		}
 
 		return new Response(

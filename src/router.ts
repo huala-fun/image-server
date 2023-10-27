@@ -1,8 +1,9 @@
-import { Router } from 'itty-router';
+import { IRequest, Router, json, withContent } from 'itty-router';
 
 // now let's create a router (note the lack of "new")
 const router = Router();
 
+const withFormData = async (req: IRequest) => {};
 // GET collection index
 router.get('/api/todos', () => new Response('Todos Index!'));
 
@@ -10,10 +11,16 @@ router.get('/api/todos', () => new Response('Todos Index!'));
 router.get('/api/todos/:id', ({ params }) => new Response(`Todo #${params.id}`));
 
 // POST to the collection (we'll use async here)
-router.post('/api/todos', async (request) => {
-	const content = await request.json();
-
-	return new Response('Creating Todo: ' + JSON.stringify(content));
+router.post('/api/todos', async (req) => {
+	const formData = await req.formData();
+	const file = formData.get('file') as unknown as File;
+	const title = formData.get('title') as string;
+	
+	
+	return {
+		file: file.name,
+		title
+	};
 });
 
 // 404 for everything else
